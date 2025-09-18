@@ -1,4 +1,6 @@
+// @ts-expect-error: React is required for test environment
 import React from 'react';
+
 // ...existing code...
 // ...existing code...
 import { Box, Typography, Divider, Stack } from '@mui/material';
