@@ -1,70 +1,99 @@
-# React + TypeScript + Vite
+# EdWiseSoft Solutions LLP Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+A modern, professional company website for EdWiseSoft Solutions LLP, built with Vite, React, TypeScript, and Material UI. Inspired by vibeaiservices.com, this site features sections for About, Services, Why Us, Resources, Contact, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Setup & Scripts
 
-## Expanding the ESLint configuration
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Run locally:**
+   ```sh
+   npm run dev
+   ```
+3. **Lint:**
+   ```sh
+   npm run lint
+   ```
+4. **Test:**
+   ```sh
+   npm run test
+   ```
+5. **Build for production:**
+   ```sh
+   npm run build
+   ```
+6. **Preview production build:**
+   ```sh
+   npm run preview
+   ```
+7. **Deploy to GitHub Pages:**
+   ```sh
+   npm run deploy
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🗺️ Site Map
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Home (Hero)
+- About
+- Services
+- Why Us
+- Resources
+- Contact
+- Footer
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🌳 Component Tree Diagram
+
+```
+<App>
+  ├── Navbar
+  ├── Hero
+  ├── About
+  ├── Services
+  ├── WhyUs
+  ├── Resources
+  ├── Contact
+  └── Footer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 What I Learned
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-EdWiseSoft
+- **Trade-offs:**
+  - Used Material UI for rapid, consistent design, trading off some customizability for speed and accessibility.
+  - Chose Vite for fast dev/build times and modern tooling.
+- **Bugs Fixed:**
+  - Fixed test failures by aligning test queries with actual UI text and roles.
+  - Resolved TypeScript errors (unused imports, duplicate identifiers) and test/build conflicts.
+  - Handled React import issues for test compatibility with `@ts-expect-error`.
+- **Performance Wins:**
+  - Used Vite’s code-splitting and chunking for faster loads.
+  - Optimized images and assets for production.
+
+---
+
+## 📚 Decisions
+- **Stack:** Vite + React + TypeScript + Material UI + Framer Motion + EmailJS
+- **Testing:** Vitest + React Testing Library
+- **CI/CD:** GitHub Actions for lint, test, and build
+- **Deployment:** GitHub Pages (free for public repos)
+
+---
+
+## 🙌 Author
+EdWiseSoft Solutions LLP
+
+---
+
+## 📢 Notes
+- For any issues, open an issue or contact the maintainer.
+- This project is for learning and demonstration purposes.
