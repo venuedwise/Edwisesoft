@@ -1,5 +1,5 @@
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Container, Box } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Hero from '../sections/Hero';

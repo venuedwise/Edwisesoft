@@ -1,4 +1,4 @@
-import React from 'react';
+// ...existing code...
 import ContactUs from '../components/ContactUs';
 
 const Contact = () => <ContactUs />;

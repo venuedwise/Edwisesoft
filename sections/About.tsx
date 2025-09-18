@@ -1,6 +1,4 @@
-
-
-import React from 'react';
+// ...existing code...
 import { Box, Typography, Divider, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 

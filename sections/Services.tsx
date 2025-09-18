@@ -1,14 +1,24 @@
-function ProductCards({ products }) {
-  const [openIdx, setOpenIdx] = React.useState(null);
+interface Product {
+  title: string;
+  desc: string;
+  more: string;
+}
 
-  const handleOpen = (idx) => setOpenIdx(idx);
+interface ProductCardsProps {
+  products: Product[];
+}
+
+function ProductCards({ products }: ProductCardsProps) {
+  const [openIdx, setOpenIdx] = React.useState<number | null>(null);
+
+  const handleOpen = (idx: number) => setOpenIdx(idx);
   const handleClose = () => setOpenIdx(null);
 
   return (
     <Box>
       {/* Product cards row */}
       <Box sx={{ display: 'flex', gap: 4, overflowX: 'auto', mb: 2, pb: 1, px: 1, scrollbarWidth: 'thin', maxWidth: '100%' }}>
-        {products.map((product, idx) => (
+  {products.map((product: Product, idx: number) => (
           <Card key={product.title} component={motion.div} whileHover={{ scale: 1.05 }} elevation={4}
             sx={{ minWidth: 320, maxWidth: 340, borderRadius: 3, minHeight: 260, display: 'flex', flexDirection: 'column', alignItems: 'center', p: 2, flex: '0 0 auto', position: 'relative' }}>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 2, mt: 1 }}>
@@ -62,7 +72,7 @@ function ProductCards({ products }) {
         <DialogContent dividers sx={{ pt: 1, position: 'relative', pb: 7 }}>
           {openIdx !== null && (
             <Box>
-              {products[openIdx].more.split(/\n|⸻/).map((para, i) => {
+              {products[openIdx].more.split(/\n|⸻/).map((para: string, i: number) => {
                 // Section heading: bold and colored
                 if (/^(How It Works|Key Benefits|What It Does|Applications|How It Helps|Key Features|What It Offers|Our Approach|Key Advantages)$/i.test(para.trim())) {
                   return (
