@@ -1,7 +1,7 @@
 # EdWiseSoft Solutions LLP Website
 
 ## Project Overview
-A modern, professional company website for EdWiseSoft Solutions LLP, built with Vite, React, TypeScript, and Material UI. Inspired by vibeaiservices.com, this site features sections for About, Services, Why Us, Resources, Contact, and more.
+A modern, professional company website for EdWiseSoft Solutions LLP, built with Vite, React, TypeScript, and Material UI. 
 
 ---
 
@@ -88,12 +88,3 @@ A modern, professional company website for EdWiseSoft Solutions LLP, built with 
 - **Deployment:** GitHub Pages (free for public repos)
 
 ---
-
-## 🙌 Author
-EdWiseSoft Solutions LLP
-
----
-
-## 📢 Notes
-- For any issues, open an issue or contact the maintainer.
-- This project is for learning and demonstration purposes.
