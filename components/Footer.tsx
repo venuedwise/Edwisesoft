@@ -63,7 +63,7 @@ const Footer = () => {
             Career Opportunities
           </Typography>
           <Typography id="career-modal-description" sx={{ mb: 2 }}>
-            Interested candidates can reach out to us through our email <a href="mailto:edwisesoft.com"><b>edwisesoft.com</b></a> or contact us through this number <b>[+91 7799132754]</b>.
+            Interested candidates can reach out to us through our email <a href="mailto:edwisesoft.com"><b>edwisesoft.com</b></a> or contact us through this number <b>+91 7799132754</b>.
           </Typography>
           <Button variant="contained" color="primary" onClick={() => setCareerOpen(false)}>
             Close
