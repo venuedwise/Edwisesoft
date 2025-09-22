@@ -85,6 +85,6 @@ A modern, professional company website for EdWiseSoft Solutions LLP, built with 
 - **Stack:** Vite + React + TypeScript + Material UI + Framer Motion + EmailJS
 - **Testing:** Vitest + React Testing Library
 - **CI/CD:** GitHub Actions for lint, test, and build
-- **Deployment:** GitHub Pages (free for public repos)
+- **Deployment:** vercel
 
 ---
