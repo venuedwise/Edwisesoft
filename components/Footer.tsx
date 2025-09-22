@@ -1,6 +1,7 @@
 
 // ...existing code...
-import { useState } from 'react';
+// @ts-expect-error React is required for test environment
+import React, { useState } from 'react';
 import { Box, Typography, Link, IconButton, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -131,7 +132,7 @@ const Footer = () => {
           Email: edwisesoft.com@gmail.com
         </Typography>
         <Typography variant="body1" color="#444">
-          Phone: [+91 7799132754]
+          Phone: +91 7799132754
         </Typography>
       </DialogContent>
     </Dialog>
