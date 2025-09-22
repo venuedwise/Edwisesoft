@@ -1,13 +1,21 @@
 
 // ...existing code...
-import { Box, Typography, Link, IconButton } from '@mui/material';
+import { useState } from 'react';
+import { Box, Typography, Link, IconButton, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 // import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import CloseIcon from '@mui/icons-material/Close';
 // import { b } from 'framer-motion/client';
 
-const Footer = () => (
+const Footer = () => {
+  const [careerModalOpen, setCareerModalOpen] = useState(false);
+
+  const handleCareerModalOpen = () => setCareerModalOpen(true);
+  const handleCareerModalClose = () => setCareerModalOpen(false);
+
+  return (
   <Box component="footer" sx={{ width: '100%', bgcolor: '#f5f7fa', borderTop: '1.5px solid #e3ecfa', pt: 7, pb: 2 }}>
     <Box sx={{ maxWidth: 1200, mx: 'auto', px: { xs: 2, md: 4 } }}>
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'flex-start', md: 'center' }, gap: { xs: 4, md: 0 }, mb: 3 }}>
@@ -31,6 +39,16 @@ const Footer = () => (
             <Link href="/#services" color="#222" underline="hover" fontWeight={500} sx={{ py: 0.5 }}>Services</Link>
             <Link href="/#resources" color="#222" underline="hover" fontWeight={500} sx={{ py: 0.5 }}>Resources</Link>
             <Link href="/#contact" color="#222" underline="hover" fontWeight={500} sx={{ py: 0.5 }}>Contact</Link>
+            <Link 
+              component="button"
+              onClick={handleCareerModalOpen}
+              color="#222" 
+              underline="hover" 
+              fontWeight={500} 
+              sx={{ py: 0.5, textAlign: 'left', border: 'none', background: 'none', cursor: 'pointer' }}
+            >
+              Career Opportunities
+            </Link>
           </Box>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: 160 }}>
             <Typography variant="subtitle1" fontWeight={700} color="#1976d2" sx={{ fontSize: 22 }}>
@@ -62,8 +80,63 @@ const Footer = () => (
   <Link href="/terms-of-service"  underline="hover" sx={{ fontSize: 14 }}><b>Terms of Service</b></Link>
       </Box>
     </Box>
+    
+    {/* Career Opportunities Modal */}
+    <Dialog
+      open={careerModalOpen}
+      onClose={handleCareerModalClose}
+      maxWidth="sm"
+      fullWidth
+      PaperProps={{ sx: { borderRadius: 3, p: 2 } }}
+    >
+      <DialogTitle sx={{ fontWeight: 700, color: '#1976d2', pr: 5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span>Career Opportunities</span>
+        <IconButton
+          aria-label="close"
+          onClick={handleCareerModalClose}
+          sx={{ ml: 2, color: '#888' }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent dividers sx={{ pt: 1, pb: 3 }}>
+        <Typography variant="h6" fontWeight={600} color="#222" sx={{ mb: 2 }}>
+          Join Our Team
+        </Typography>
+        <Typography variant="body1" color="#444" sx={{ mb: 2 }}>
+          We're always looking for talented individuals to join our growing team. At EdWiseSoft Solutions LLP, 
+          you'll work on cutting-edge educational technology projects that make a real impact.
+        </Typography>
+        <Typography variant="body1" color="#444" sx={{ mb: 2 }}>
+          Current opportunities include:
+        </Typography>
+        <Box component="ul" sx={{ pl: 3, mb: 2 }}>
+          <Typography component="li" variant="body1" color="#444" sx={{ mb: 1 }}>
+            Software Developers (React, Node.js, AI/ML)
+          </Typography>
+          <Typography component="li" variant="body1" color="#444" sx={{ mb: 1 }}>
+            UI/UX Designers
+          </Typography>
+          <Typography component="li" variant="body1" color="#444" sx={{ mb: 1 }}>
+            Educational Technology Specialists
+          </Typography>
+          <Typography component="li" variant="body1" color="#444" sx={{ mb: 1 }}>
+            Business Development Associates
+          </Typography>
+        </Box>
+        <Typography variant="body1" color="#444" sx={{ mb: 2 }}>
+          <strong>Contact us for more information:</strong>
+        </Typography>
+        <Typography variant="body1" color="#444" sx={{ mb: 1 }}>
+          Email: edwisesoft.com@gmail.com
+        </Typography>
+        <Typography variant="body1" color="#444">
+          Phone: [+91 7799132754]
+        </Typography>
+      </DialogContent>
+    </Dialog>
   </Box>
-  
-);
+  );
+};
 
 export default Footer;
